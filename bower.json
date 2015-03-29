@@ -1,0 +1,14 @@
+{
+  "name": "angular-translate-once",
+  "version": "1.0.0",
+  "authors": [
+    "Atticus White <contact@atticuswhite.com>"
+  ],
+  "description": "Angular translate one-time directive",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "angular-translate": "~2.6.1",
+    "angular": "~1.3.15"
+  }
+}
