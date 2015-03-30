@@ -1,5 +1,11 @@
 # angular-translate-once
 
+[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://bower.herokuapp.com/packages/angular-translate-once)
+[![Build Status](http://img.shields.io/travis/ajwhite/angular-translate-once.svg?style=flat)](http://travis-ci.org/ajwhite/angular-translate-once)
+[![Dependency Status](http://img.shields.io/gemnasium/ajwhite/angular-translate-once.svg?style=flat)](https://gemnasium.com/ajwhite/angular-translate-once)
+
+
+
 `angular-translate-once` is an extension of [`angular-translate`](https://github.com/angular-translate/angular-translate) by introducing one-time bindings for static content.
 
 By default, all of your translations beocme part of the digest cycle and bloat your application's [`$watch` list](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch). You don't really need to observe any changes for things like
