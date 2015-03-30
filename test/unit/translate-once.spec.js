@@ -1,3 +1,5 @@
+'use strict';
+
 describe('pascalprecht.translate', function () {
   describe('$translateOnce', function () {
     var $compile,
@@ -74,4 +76,4 @@ describe('pascalprecht.translate', function () {
       });
     });
   });
-})
+});

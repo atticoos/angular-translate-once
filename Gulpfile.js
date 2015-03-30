@@ -7,3 +7,5 @@ gulp.task('test', function (done) {
     singleRun: true
   }, done);
 });
+
+gulp.task('default', ['test']);
