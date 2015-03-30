@@ -1,6 +1,15 @@
 # angular-translate-once
 
-This is an extension of [`angular-translate`](https://github.com/angular-translate/angular-translate) to allow for one-time binding for static content. This enhances the `angular-translate` module by only applying the translation once. Without `angular-translate-once`, your translations are added to the application's watch context when many times they will never expect a change (field labels, static copy, etc).
+`angular-translate-once` is an extension of [`angular-translate`](https://github.com/angular-translate/angular-translate) by introducing one-time bindings for static content.
+
+By default, all of your translations beocme part of the digest cycle and bloat your application's [`$watch` list](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch). You don't really need to observe any changes for things like
+
+- form labels
+- input placeholders
+- link text/titles
+- static copy
+
+These things really only need to bind once. If you're looking to trim any excess watchers from your application, and you use [`angular-translate`](https://github.com/angular-translate/angular-translate), this directive may help you out.
 
 
 ## Example Usage
