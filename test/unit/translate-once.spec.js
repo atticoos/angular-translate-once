@@ -9,7 +9,8 @@ describe('pascalprecht.translate', function () {
           'FOO': 'foo',
           'BAR': 'bar',
           'FOOBAR': 'foobar',
-          'WITH_VALUE': 'translation with {{value}}'
+          'WITH_VALUE': 'translation with {{value}}',
+          'WITH_ELEMENT': 'translation with <strong ng-bind="foo"></strong> and {{value}}'
         };
 
     beforeEach(module('pascalprecht.translate', function ($translateProvider) {
@@ -43,6 +44,17 @@ describe('pascalprecht.translate', function () {
       var element = $compile('<div translate-once="WITH_VALUE" translate-values="translationValue"></div>')($rootScope);
       $rootScope.$digest();
       expect(element.text()).toBe('translation with foobar');
+    });
+
+    it ('should translate and compile elements', function () {
+      var markup = '<div translate-once="WITH_ELEMENT" translate-values="translationValue" translate-compile></div>',
+          element;
+      $rootScope.foo = 'foo';
+      $rootScope.translationValue = {value: 'bar'};
+      element = $compile(markup)($rootScope);
+      $rootScope.$digest();
+      expect(element.text()).toBe('translation with foo and bar');
+      expect(element.find('strong').html()).toBe('foo');
     });
 
     describe('attributes', function () {
