@@ -12,7 +12,7 @@
 
   createDirective = function (attribute) {
     var namedDirective = getNamedDirectiveFromAttribute(attribute);
-    angular.module(MODULE_NAME).directive(namedDirective, ['$compile','$parse', '$translate',
+    angular.module(MODULE_NAME).directive(namedDirective, ['$parse', '$translate',
     TranslateOnceAttributeDirective.bind(undefined, attribute)]);
   };
 
@@ -21,7 +21,7 @@
    * Translate a key once for a given attribute
    * <a translate-once-title="TRANSLATION_TITLE"><a>
    */
-  function TranslateOnceAttributeDirective (attribute, $compile, $parse, $translate) {
+  function TranslateOnceAttributeDirective (attribute, $parse, $translate) {
     var namedDirective = getNamedDirectiveFromAttribute(attribute);
     return {
       restrict: 'A',
