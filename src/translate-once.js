@@ -57,10 +57,13 @@
         }
         // queue the translation
         $translate(attrs[DIRECTIVE_NAME], translateValues).then(function (translation) {
+          var output = translation;
+          if (attrs.translateCompile) {
+            // compile the element with the scope
+            output = $compile(translation)(scope);
+          }
           // update the element with the translation
-          element.html(translation);
-          // compile the element with the scope
-          $compile(element.contents())(scope);
+          element.html(output);
         });
       }
     };
