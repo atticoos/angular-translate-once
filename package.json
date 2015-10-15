@@ -1,6 +1,6 @@
 {
   "name": "angular-translate-once",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular translate one-time directive",
   "main": "src/translate-once.js",
   "directories": {
