@@ -2,18 +2,24 @@
   'use strict';
   var MODULE_NAME = 'pascalprecht.translate',
       DIRECTIVE_NAME = 'translateOnce',
-      ATTRS = ['value', 'title', 'alt', 'placeholder'],
+      ATTRS = ['value', 'title', 'alt', 'placeholder', 'aria-label'],
       getNamedDirectiveFromAttribute,
       createDirective;
 
   getNamedDirectiveFromAttribute = function (attribute) {
-    return DIRECTIVE_NAME + attribute.charAt(0).toUpperCase() + attribute.slice(1);
+    var attributeNameCamelCase = attribute.split('-')
+        .map(function (word) {
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join('');
+
+    return DIRECTIVE_NAME + attributeNameCamelCase;
   };
 
   createDirective = function (attribute) {
     var namedDirective = getNamedDirectiveFromAttribute(attribute);
     angular.module(MODULE_NAME).directive(namedDirective, ['$parse', '$translate',
-    TranslateOnceAttributeDirective.bind(undefined, attribute)]);
+      TranslateOnceAttributeDirective.bind(undefined, attribute)]);
   };
 
   /**
@@ -76,10 +82,10 @@
   });
 
   angular.module(MODULE_NAME)
-    .directive(DIRECTIVE_NAME, [
-      '$compile',
-      '$parse',
-      '$translate',
-      TranslateOnceDirective
-    ]);
+      .directive(DIRECTIVE_NAME, [
+        '$compile',
+        '$parse',
+        '$translate',
+        TranslateOnceDirective
+      ]);
 }).apply(this);
