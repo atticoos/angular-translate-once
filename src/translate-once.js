@@ -13,7 +13,7 @@
   createDirective = function (attribute) {
     var namedDirective = getNamedDirectiveFromAttribute(attribute);
     angular.module(MODULE_NAME).directive(namedDirective, ['$parse', '$translate',
-    TranslateOnceAttributeDirective.bind(undefined, attribute)]);
+    angular.bind(undefined, TranslateOnceAttributeDirective, attribute)]);
   };
 
   /**

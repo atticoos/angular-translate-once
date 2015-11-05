@@ -7,7 +7,6 @@ module.exports = function (config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-translate/angular-translate.js',
-      'test/polyfill.js',
       'src/*.js',
       'test/**/*.spec.js'
     ],
