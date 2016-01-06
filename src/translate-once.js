@@ -50,9 +50,9 @@
       restrict: 'A',
       priority: -1,
       link: function (scope, element, attrs) {
-        var translateValues = {};
-        var translationKey = attrs[DIRECTIVE_NAME];
-        
+        var translateValues = {},
+            translationKey = attrs[DIRECTIVE_NAME];
+
         // if the attribute doesn't have a value, use the element's text
         if (!translationKey) {
           translationKey = element.text().trim();
