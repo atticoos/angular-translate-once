@@ -55,8 +55,15 @@
         if (attrs.translateValues) {
           translateValues = $parse(attrs.translateValues)(scope);
         }
+
+         var translationId = attrs[DIRECTIVE_NAME];
+         // If the attribute doesn't have a value.
+         if (!translationId) {
+           translationId = element.text();
+         }
+
         // queue the translation
-        $translate(attrs[DIRECTIVE_NAME], translateValues).then(function (translation) {
+        $translate(translationId, translateValues).then(function (translation) {
           // update the element with the translation
           element.html(translation);
 
