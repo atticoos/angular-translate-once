@@ -30,7 +30,7 @@ describe('pascalprecht.translate', function () {
       expect(element.text()).toBe(translations.FOO);
     });
 
-    it ('should perform the translation also when the key is set in the value', function () {
+    it ('should perform the translation when the key is set in the element\'s text', function () {
       var element = $compile('<div translate-once=>FOO</div>')($rootScope);
       $rootScope.$digest();
       expect(element.text()).toBe(translations.FOO);
