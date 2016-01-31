@@ -31,3 +31,8 @@ These things really only need to bind once. If you're looking to trim any excess
 ---
 
 This should all look very familiar, the only difference is `-once` in the directive name, and that the translation will be applied as soon as the directive is linked.
+
+## Instruction for contributors
+```
+npm install
+```
