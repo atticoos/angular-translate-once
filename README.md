@@ -8,7 +8,7 @@
 
 `angular-translate-once` is an extension of [`angular-translate`](https://github.com/angular-translate/angular-translate) by introducing one-time bindings for static content.
 
-By default, all of your translations beocme part of the digest cycle and bloat your application's [`$watch` list](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch). You don't really need to observe any changes for things like
+By default, all of your translations become part of the digest cycle and bloat your application's [`$watch` list](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch). You don't really need to observe any changes for things like
 
 - form labels
 - input placeholders
