@@ -2,7 +2,7 @@
   'use strict';
   var MODULE_NAME = 'pascalprecht.translate',
       DIRECTIVE_NAME = 'translateOnce',
-      ATTRS = ['value', 'title', 'alt', 'placeholder'],
+      ATTRS = ['value', 'title', 'alt', 'placeholder', 'aria-label'],
       getNamedDirectiveFromAttribute,
       createDirective;
 
