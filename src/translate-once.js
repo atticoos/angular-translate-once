@@ -10,18 +10,12 @@
     return DIRECTIVE_NAME + attribute.charAt(0).toUpperCase() + attribute.slice(1);
   };
 
-  createDirective = function (attribute) {
-    var namedDirective = getNamedDirectiveFromAttribute(attribute);
-    angular.module(MODULE_NAME).directive(namedDirective, ['$parse', '$translate',
-    angular.bind(undefined, TranslateOnceAttributeDirective, attribute)]);
-  };
-
   /**
    * Translate Once Attributes
    * Translate a key once for a given attribute
    * <a translate-once-title="TRANSLATION_TITLE"><a>
    */
-  function TranslateOnceAttributeDirective (attribute, $parse, $translate) {
+  var TranslateOnceAttributeDirective = function (attribute, $parse, $translate) {
     var namedDirective = getNamedDirectiveFromAttribute(attribute);
     return {
       restrict: 'A',
@@ -39,7 +33,13 @@
         });
       }
     };
-  }
+  };
+
+  createDirective = function (attribute) {
+    var namedDirective = getNamedDirectiveFromAttribute(attribute);
+    angular.module(MODULE_NAME).directive(namedDirective, ['$parse', '$translate',
+    angular.bind(undefined, TranslateOnceAttributeDirective, attribute)]);
+  };
 
   /**
    * Translate Once
