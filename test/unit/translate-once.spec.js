@@ -4,7 +4,7 @@ describe('pascalprecht.translate', function () {
   describe('$translateOnce', function () {
     var $compile,
         $rootScope,
-        elementAttributes = ['placeholder', 'title', 'alt', 'value', 'aria-label'],
+        elementAttributes = ['placeholder', 'title', 'alt', 'value'],
         translations = {
           'FOO': 'foo',
           'BAR': 'bar',

@@ -36,7 +36,9 @@ This should all look very familiar, the only difference is `-once` in the direct
 ```
 npm install -g jshint
 npm install -g jscs
+npm install -g gulp
 npm install
+bower install
 npm run pretest
 npm test
 ```
