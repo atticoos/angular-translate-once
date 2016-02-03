@@ -34,5 +34,10 @@ This should all look very familiar, the only difference is `-once` in the direct
 
 ## Instruction for contributors
 ```
+npm install -g jshint
+npm install -g jscs
+npm install -g gulp
 npm install
+bower install
+npm test
 ```

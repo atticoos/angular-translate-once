@@ -1,11 +1,11 @@
 var gulp = require('gulp'),
-    karma = require('karma').server;
+    Server = require('karma').Server;
 
 gulp.task('test', function (done) {
-  karma.start({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done);
+  new Server({
+   configFile: __dirname + '/karma.conf.js',
+   singleRun: true
+ }, done).start();
 });
 
 gulp.task('default', ['test']);
