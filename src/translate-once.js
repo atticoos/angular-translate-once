@@ -7,7 +7,23 @@
       createDirective;
 
   getNamedDirectiveFromAttribute = function (attribute) {
-    return DIRECTIVE_NAME + attribute.charAt(0).toUpperCase() + attribute.slice(1);
+    // return DIRECTIVE_NAME + attribute.charAt(0).toUpperCase() + attribute.slice(1);
+
+    var toCamelCase = function (attr) {
+      return attr.split('-')
+        .map(function (word) {
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join('');
+    };
+
+    // var attributeNameCamelCase = attribute.split('-')
+    //   .map(function (word) {
+    //     return word.charAt(0).toUpperCase() + word.slice(1);
+    //   })
+    //   .join('');
+
+    return DIRECTIVE_NAME + toCamelCase(attribute);
   };
 
   /**

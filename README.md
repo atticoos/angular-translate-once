@@ -39,6 +39,5 @@ npm install -g jscs
 npm install -g gulp
 npm install
 bower install
-npm run pretest
 npm test
 ```
