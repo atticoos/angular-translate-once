@@ -66,7 +66,7 @@
         // queue the translation
         $translate(translationKey, translateValues).then(function (translation) {
           // update the element with the translation
-          element.html(translation);
+          element.text(translation);
 
           // if the flag for compiling is set, compile it
           if (attrs.hasOwnProperty('translateCompile')) {
